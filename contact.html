@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JeBelle FC • Contact</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/config.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <div class="nav">
+    <div class="navInner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <div class="brandMark" aria-hidden="true"></div>
+        <div class="brandText">
+          <span data-club>JeBelle FC</span>
+          <span data-founded>Est. 2001</span>
+        </div>
+      </a>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="fixtures.html">Fixtures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="shop.html">Shop</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="ctas">
+        <a class="btn" id="igLink" href="#" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn" id="fbLink" href="#" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn green" href="donate.html">Support</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    
+<section class="card">
+  <div class="h2">Contact</div>
+  <p class="p">Reach the club for sponsorships, trials, media, or partnerships.</p>
+
+  <div class="grid cols-2">
+    <div class="card">
+      <div class="h2">Social</div>
+      <div class="list" style="margin-top:10px">
+        <div class="item"><div class="dot"></div><div><b>Instagram</b><div class="small">@jebellefc</div></div></div>
+        <div class="item"><div class="dot"></div><div><b>Facebook</b><div class="small">JeBelle FC</div></div></div>
+      </div>
+      <div style="height:10px"></div>
+      <div class="kv">
+        <a class="btn" id="igLink3" href="https://instagram.com/jebellefc" target="_blank" rel="noopener">Open Instagram</a>
+        <a class="btn" id="fbLink3" href="https://www.facebook.com/search/top?q=JeBelle%20FC" target="_blank" rel="noopener">Open Facebook</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="h2">Message</div>
+      <div class="notice">
+        To make this form work for free, create a Formspree form and paste the endpoint in <b>assets/config.js</b> → <b>contact.formspreeEndpoint</b>.
+      </div>
+
+      <form id="contactForm" method="POST">
+        <label>Name</label>
+        <input class="input" name="name" placeholder="Your name" required />
+        <label>Email</label>
+        <input class="input" type="email" name="email" placeholder="your@email.com" required />
+        <label>Message</label>
+        <textarea class="input" name="message" rows="5" placeholder="How can we help?" required></textarea>
+        <div style="height:12px"></div>
+        <button class="btn green" type="submit">Send</button>
+        <div id="formStatus" class="small" style="margin-top:10px"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cfg = window.JEBELLE_CONFIG?.contact || {};
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("formStatus");
+    const endpoint = cfg.formspreeEndpoint || "";
+    if(!endpoint || endpoint.includes("PASTE_")){
+      status.textContent = "Form not connected yet. Add your Formspree endpoint in assets/config.js.";
+      form.addEventListener("submit", (e)=>{ e.preventDefault(); });
+      return;
+    }
+    form.action = endpoint;
+    form.addEventListener("submit", async (e)=>{
+      e.preventDefault();
+      status.textContent = "Sending...";
+      try{
+        const res = await fetch(endpoint, { method:"POST", body: new FormData(form), headers: { "Accept":"application/json" } });
+        if(res.ok){
+          status.textContent = "Sent! We'll get back to you soon.";
+          form.reset();
+        }else{
+          status.textContent = "Something went wrong. Try again later.";
+        }
+      }catch(err){
+        status.textContent = "Network error. Try again.";
+      }
+    });
+  });
+</script>
+
+
+    <div class="footer">
+      <div>© <span data-year></span> <span data-club>JeBelle FC</span> • <span data-location></span></div>
+      <div>
+        <a id="igLink2" href="https://instagram.com/jebellefc" target="_blank" rel="noopener">IG: @jebellefc</a>
+        <span style="opacity:.5"> • </span>
+        <a id="fbLink2" href="https://www.facebook.com/search/top?q=JeBelle%20FC" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

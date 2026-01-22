@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JeBelle FC</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/config.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <div class="nav">
+    <div class="navInner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <div class="brandMark" aria-hidden="true"></div>
+        <div class="brandText">
+          <span data-club>JeBelle FC</span>
+          <span data-founded>Est. 2001</span>
+        </div>
+      </a>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="fixtures.html">Fixtures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="shop.html">Shop</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="ctas">
+        <a class="btn" id="igLink" href="#" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn" id="fbLink" href="#" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn green" href="donate.html">Support</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    
+<section class="hero">
+  <div class="heroInner">
+    <div class="split">
+      <div>
+        <h1 class="h1"><span data-tagline></span> <span data-club></span>.</h1>
+        <p class="p">Official club hub for match updates, photos & videos, merchandise, and donating to support the team.</p>
+        <div class="kv">
+          <a class="btn primary" href="shop.html">Buy Merch</a>
+          <a class="btn green" href="donate.html">Donate</a>
+          <a class="btn" href="gallery.html">View Gallery</a>
+        </div>
+        <div class="kv">
+          <span class="badge">⚫ Black • 🟡 Yellow • 🟢 Green</span>
+          <span class="badge">Founded: <span data-founded></span></span>
+          <span class="badge">📍 <span data-location></span></span>
+        </div>
+      </div>
+
+      <div class="logoBox">
+        <div class="logoRow">
+          <div class="logoImg" title="Add your logo at assets/logo.png">
+            <div class="logoFallback" id="logoFallback"></div>
+          </div>
+          <div>
+            <div class="h2" style="margin:0">JeBelle FC Crest</div>
+            <div class="small">Place your crest image at <b>assets/logo.png</b> to replace this placeholder.</div>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="small"><b>Quick launch checklist</b></div>
+        <div class="list" style="margin-top:10px">
+          <div class="item"><div class="dot"></div><div><b>Add logo</b><div class="small">Save your crest as <b>assets/logo.png</b>.</div></div></div>
+          <div class="item"><div class="dot"></div><div><b>Add products + donate links</b><div class="small">Edit <b>assets/config.js</b>.</div></div></div>
+          <div class="item"><div class="dot"></div><div><b>Add media</b><div class="small">Upload to Cloudinary/YouTube, paste links in <b>config.js</b>.</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div style="height:14px"></div>
+
+<section class="grid cols-3">
+  <div class="card">
+    <div class="h2">Fixtures & Results</div>
+    <div class="small">Keep supporters up to date. Edit fixtures in <b>assets/config.js</b>.</div>
+    <div style="height:10px"></div>
+    <a class="btn" href="fixtures.html">View Fixtures</a>
+  </div>
+  <div class="card">
+    <div class="h2">Photo & Video Gallery</div>
+    <div class="small">Admins upload content and the site displays it cleanly.</div>
+    <div style="height:10px"></div>
+    <a class="btn" href="gallery.html">Open Gallery</a>
+  </div>
+  <div class="card">
+    <div class="h2">Merch Store</div>
+    <div class="small">Use Stripe payment links (or any checkout link) — no monthly fee.</div>
+    <div style="height:10px"></div>
+    <a class="btn" href="shop.html">Shop Now</a>
+  </div>
+</section>
+
+<script>
+  // If you add assets/logo.png, this swaps the placeholder for your real logo automatically.
+  const img = new Image();
+  img.onload = () => {
+    const box = document.querySelector(".logoImg");
+    box.innerHTML = "";
+    img.className = "logoReal";
+    box.appendChild(img);
+  };
+  img.onerror = () => {};
+  img.src = "assets/logo.png";
+</script>
+
+
+    <div class="footer">
+      <div>© <span data-year></span> <span data-club>JeBelle FC</span> • <span data-location></span></div>
+      <div>
+        <a id="igLink2" href="https://instagram.com/jebellefc" target="_blank" rel="noopener">IG: @jebellefc</a>
+        <span style="opacity:.5"> • </span>
+        <a id="fbLink2" href="https://www.facebook.com/search/top?q=JeBelle%20FC" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

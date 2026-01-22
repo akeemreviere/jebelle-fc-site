@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>JeBelle FC • Gallery</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <script src="assets/config.js"></script>
+  <script defer src="assets/app.js"></script>
+</head>
+<body>
+  <div class="nav">
+    <div class="navInner">
+      <a class="brand" href="index.html" aria-label="Home">
+        <div class="brandMark" aria-hidden="true"></div>
+        <div class="brandText">
+          <span data-club>JeBelle FC</span>
+          <span data-founded>Est. 2001</span>
+        </div>
+      </a>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="fixtures.html">Fixtures</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="shop.html">Shop</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="ctas">
+        <a class="btn" id="igLink" href="#" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn" id="fbLink" href="#" target="_blank" rel="noopener">Facebook</a>
+        <a class="btn green" href="donate.html">Support</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    
+<section class="card">
+  <div class="h2">Gallery</div>
+  <p class="p">Match moments, training clips, and celebrations.</p>
+  <div class="notice">
+    <b>Uploads:</b> For a free site, the safest setup is <b>admin-only uploads</b> (you upload to Cloudinary/YouTube),
+    then paste the links in <b>assets/config.js</b>. This avoids spam and keeps things clean.
+  </div>
+  <div class="hr"></div>
+  <div id="mediaGrid" class="grid cols-3"></div>
+
+  <div class="hr"></div>
+  <div class="h2">Highlights</div>
+  <div id="highlights" class="grid cols-2"></div>
+</section>
+
+
+    <div class="footer">
+      <div>© <span data-year></span> <span data-club>JeBelle FC</span> • <span data-location></span></div>
+      <div>
+        <a id="igLink2" href="https://instagram.com/jebellefc" target="_blank" rel="noopener">IG: @jebellefc</a>
+        <span style="opacity:.5"> • </span>
+        <a id="fbLink2" href="https://www.facebook.com/search/top?q=JeBelle%20FC" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
